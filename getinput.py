@@ -1,12 +1,13 @@
 #!/usr/bin/env python3.6
-import os
-#import time
+import os 
+#import time #this imports the entire package, which is inefficient
 
-from time import localtime, strftime
+from time import localtime, strftime #this is more efficient, we import only the parts of the standard library we will use
 
-#now = time.localtime()
-now = localtime()
-print(f"\n{__file__} started at {strftime('%X', now)}")
+#now = time.localtime() #this is how you call it when you import time
+now = localtime() #but since we imported the localtime part already, we can just call it this way now
+
+print(f"\n{__file__} started at {strftime('%X', now)}") #the print(f... thing only works in python 3
 
 
 path_found = os.getenv("PATH")
